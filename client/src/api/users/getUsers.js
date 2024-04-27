@@ -1,11 +1,10 @@
 // get-all function that should *not* be used in any real app.
 import backend from '../index.js'
 
-export default (id) => {
+export default () => {
   return new Promise(async (resolve, reject) => {
     try {
-      // Add validation that checks the id content.
-      let response = await backend.get(`/user/${id}`)
+      let response = await backend.get('/user')
       resolve(response)
     } catch(error) {
       reject(error)

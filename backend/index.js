@@ -9,11 +9,11 @@ import users from './routes/users.js'
 import courses from './routes/courses.js'
 
 app.use(cors())
-app.use(users, '/user')
-app.use(courses, '/course')
+app.use('/user', users)
+app.use('/course', courses)
 
 app.get('/', (req, res) => {
-  res.send('hey')
+  res.send('Default route.')
 })
 
 app.listen(port, () => {

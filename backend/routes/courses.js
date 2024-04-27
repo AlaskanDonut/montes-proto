@@ -9,14 +9,14 @@ const coursesData = [
   { id: 3, name: 'PSY 410: Cognitive Pychology', instructor: 'Dr. Krystal St. Peter' },
 ]
 
+router.get('/', (req, res) => {
+  res.send(coursesData)
+}) // A "get all" end-point shouldn't exist
+
 router.get('/:courseId', (req, res) => {
   let courseId = Number(req.params.courseId)
   let course = coursesData.filter((c) => c.id === courseId)
   res.send(course)
 })
 
-router.get('/', (req, res) => {
-  res.send(coursesData)
-}) // A "get all" end-point shouldn't exist
-
-export default router;
+export default router

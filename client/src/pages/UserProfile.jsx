@@ -11,7 +11,7 @@ export default function UserProfile() {
     const fetch = async () => {
       try {
         let user = await getUser(id)
-        setUserData(user)
+        setUserData(user.data[0])
       } catch(error) {
         console.log(error.stack)
       }
@@ -23,7 +23,6 @@ export default function UserProfile() {
     <div>
       User Profile
       { Object.keys(userData).length !== 0 ? ( <div>Username: { userData.username } </div> ) : null }
-      { id }
     </div>
   )
 }

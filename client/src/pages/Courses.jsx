@@ -1,14 +1,17 @@
 import { useState, useEffect } from 'react'
-import { getCourses } from '../api/courses/getCourses.js'
+import getCourses from '../api/courses/getCourses.js'
 
 export default function Courses() {
   const [courses, setCourses] = useState([])
 
   useEffect(() => {
-    console.log('useEffect() called')
-    const fetchData = () => {
-      let data = getCourses()
-      setCourses(data)
+    const fetchData = async () => {
+      try {
+        let response = await getCourses()
+        setCourses(response.data.list)
+      } catch(error) {
+        console.log('Could not get courses.')
+      }
     }
     fetchData()
   }, [])
@@ -16,7 +19,13 @@ export default function Courses() {
   return (
     <div>
       Courses:
-      { courses.length > 0 ? courses.map(course => (<div key={course.name}>{course.name}</div>)) : null}
+      { courses.length > 0 ?
+        courses.map(course => (
+          <div key={course.word}>
+            <h1>{course.word}</h1>
+            <p>Definition: {course.definition}</p>
+          </div>
+        )) : null}
     </div>
   )
 }
