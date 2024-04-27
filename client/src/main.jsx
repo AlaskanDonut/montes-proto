@@ -7,6 +7,7 @@ import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom'
 // Layouts
 import Layout from './layouts/Layout.jsx'
 import ProtectedRoutes from './ProtectedRoutes.jsx'
+import UserProfile from './pages/UserProfile.jsx'
 import Courses from './pages/Courses.jsx'
 import Course from './layouts/Course.jsx'
 
@@ -45,6 +46,10 @@ const router = createBrowserRouter([{
             {
               path: '/',
               element: <div>Dashboard page</div>,
+            },
+            {
+              path: '/profile',
+              element: <UserProfile />,
             },
             {
               path: '/courses',
