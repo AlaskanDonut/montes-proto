@@ -29,22 +29,22 @@ const dashboardItems = [
 const courseItems = [
   {
     text: 'Course Home',
-    path: 'course/home',
+    path: 'home',
     icon: <BiHomeAlt2 />
   },
   {
     text: 'Syllabus',
-    path: 'course/syllabus',
+    path: '/syllabus',
     icon: <BiDetail />
   },
   {
     text: 'Assignments',
-    path: 'course/assignments',
+    path: '/assignments',
     icon: <BiListCheck />
   },
   {
     text: 'Grades',
-    path: 'course/grades',
+    path: '/grades',
     icon: <BiReceipt />
   },
 ]

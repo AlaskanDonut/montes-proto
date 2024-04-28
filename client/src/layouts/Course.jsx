@@ -10,6 +10,7 @@ export default function Course() {
     <div className="max-h-screen my-5 mr-5">
       <CardContainer>
         <h2>Course {id}</h2>
+        <Link to="home" >Go Home</Link>
         <Outlet />
       </CardContainer>
     </div>
