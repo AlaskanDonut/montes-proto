@@ -1,7 +1,5 @@
 import { useEffect } from 'react'
 import { Outlet, useNavigate } from 'react-router-dom'
-// Layuts
-import SideNav from './features/Nav/Nav'
 
 export default function ProtectedRoutes() {
   const navigate = useNavigate()
