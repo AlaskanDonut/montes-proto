@@ -34,17 +34,17 @@ const courseItems = [
   },
   {
     text: 'Syllabus',
-    path: '/syllabus',
+    path: 'syllabus',
     icon: <BiDetail />
   },
   {
     text: 'Assignments',
-    path: '/assignments',
+    path: 'assignments',
     icon: <BiListCheck />
   },
   {
     text: 'Grades',
-    path: '/grades',
+    path: 'grades',
     icon: <BiReceipt />
   },
 ]

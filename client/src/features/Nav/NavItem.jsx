@@ -1,10 +1,10 @@
 import { NavLink } from 'react-router-dom'
 
-export default function NavItem({ id, to, children }) {
+export default function NavItem({ id, children, ...props}) {
   let defaultStyle = 'flex gap-3 items-center py-3 px-5 text-nowrap truncate rounded-lg'
 
   return (
-    <NavLink
+    <NavLink {...props}
       className={({ isActive, isPending, isTransitioning }) =>
         [
           defaultStyle,
@@ -13,7 +13,7 @@ export default function NavItem({ id, to, children }) {
           !isActive ? "bg-orange-50": "",
           isTransitioning ? "transitioning" : "",
         ].join(" ")}
-      to={to}>
+      >
       {children}
     </NavLink>
   )
